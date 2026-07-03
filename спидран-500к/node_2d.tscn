@@ -1,0 +1,318 @@
+[gd_scene format=3 uid="uid://kqv35oarfpr2"]
+
+[ext_resource type="Script" uid="uid://23xhjabool7t" path="res://player.gd" id="1_0e48y"]
+[ext_resource type="Script" uid="uid://bcox3attdtrpm" path="res://node_2d.gd" id="1_rj586"]
+[ext_resource type="Texture2D" uid="uid://br2dn6ol8kesj" path="res://dhfu.png" id="4_0hol4"]
+[ext_resource type="Texture2D" uid="uid://bfa7b2eo0hhmj" path="res://3ec4d7fa-c7c1-42d8-b16d-fe7af4f39501.png" id="4_kdubu"]
+[ext_resource type="Script" uid="uid://f1c52bq871as" path="res://character_body_2d.gd" id="4_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://blk8j2h3t2wtr" path="res://Gemini_Generated_Image_c29mnwc29mnwc29m (1).png" id="5_d21ai"]
+[ext_resource type="Script" uid="uid://vd6qu7cwsog3" path="res://collision_shape_2d.gd" id="6_4d7sh"]
+[ext_resource type="Script" uid="uid://d2fdpl8cu61jt" path="res://area_2d.gd" id="6_d21ai"]
+[ext_resource type="Texture2D" uid="uid://d016pmsnlxbi5" path="res://ChatGPT Image 1 июл. 2026 г., 09_46_06.png" id="7_rj586"]
+[ext_resource type="Texture2D" uid="uid://bu6spr1lptug" path="res://шипы.png" id="9_4d7sh"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_4d7sh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(1147, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4d7sh"]
+size = Vector2(151, 28.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q6r6c"]
+atlas = ExtResource("4_0hol4")
+region = Rect2(385, 0, 341, 384)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqns4"]
+atlas = ExtResource("4_0hol4")
+region = Rect2(1026, 0, 350, 393)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0ka3"]
+atlas = ExtResource("4_0hol4")
+region = Rect2(0, 384, 704, 384)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0h7mo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q6r6c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqns4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x0ka3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rj586"]
+size = Vector2(36.375, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqns4"]
+size = Vector2(73, 58)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x0ka3"]
+size = Vector2(419.5901, 341.33374)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ir8iy"]
+size = Vector2(84, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj586"]
+atlas = ExtResource("4_kdubu")
+region = Rect2(257, 248, 307, 441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4d7sh"]
+atlas = ExtResource("4_kdubu")
+region = Rect2(564, 248, 307, 441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ir8iy"]
+atlas = ExtResource("4_kdubu")
+region = Rect2(257, 248, 307, 441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h7mo"]
+atlas = ExtResource("4_kdubu")
+region = Rect2(564, 248, 307, 441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr8wp"]
+atlas = ExtResource("4_kdubu")
+region = Rect2(871, 248, 307, 441)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2bti"]
+atlas = ExtResource("4_kdubu")
+region = Rect2(1178, 248, 307, 441)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ta5nu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rj586")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4d7sh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ir8iy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h7mo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr8wp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2bti")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flf07"]
+size = Vector2(64, 50)
+
+[node name="Node2D" type="Node2D" unique_id=1528634184]
+script = ExtResource("1_rj586")
+
+[node name="Floor" type="CharacterBody2D" parent="." unique_id=1076821259]
+position = Vector2(584, 590)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor" unique_id=67123719]
+material = SubResource("CanvasItemMaterial_4d7sh")
+position = Vector2(2, 25)
+shape = SubResource("RectangleShape2D_kdubu")
+debug_color = Color(0.54901963, 0.15686275, 0.6431373, 0.8117647)
+
+[node name="ColorRect" type="ColorRect" parent="Floor/CollisionShape2D" unique_id=566185022]
+offset_left = -568.0
+offset_top = -13.0
+offset_right = 573.0
+offset_bottom = 11.0
+color = Color(1, 0.41568628, 1, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Floor" unique_id=34168294]
+light_mask = 2
+position = Vector2(186, -111)
+shape = SubResource("RectangleShape2D_4d7sh")
+debug_color = Color(0.42352942, 0.17254902, 0.5803922, 0.69803923)
+
+[node name="ColorRect" type="ColorRect" parent="Floor/CollisionShape2D2" unique_id=1517735094]
+offset_left = -402.0
+offset_top = 42.0
+offset_right = -256.0
+offset_bottom = 66.0
+color = Color(1, 0.41568628, 1, 1)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Floor" unique_id=1708211033]
+light_mask = 2
+position = Vector2(-132, -58)
+shape = SubResource("RectangleShape2D_4d7sh")
+debug_color = Color(0.42352942, 0.17254902, 0.5803922, 0.69803923)
+
+[node name="ColorRect" type="ColorRect" parent="Floor/CollisionShape2D3" unique_id=687130954]
+offset_left = 248.0
+offset_top = -68.0
+offset_right = 393.0
+offset_bottom = -44.0
+color = Color(1, 0.41568628, 1, 1)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Floor" unique_id=1997403600]
+light_mask = 2
+position = Vector2(575, -58)
+shape = SubResource("RectangleShape2D_4d7sh")
+debug_color = Color(0.42352942, 0.17254902, 0.5803922, 0.69803923)
+
+[node name="ColorRect" type="ColorRect" parent="Floor/CollisionShape2D4" unique_id=2031168106]
+offset_left = -72.0
+offset_top = -11.0
+offset_right = 73.0
+offset_bottom = 13.0
+color = Color(1, 0.41568628, 1, 1)
+
+[node name="enemy" type="CharacterBody2D" parent="." unique_id=199279696]
+position = Vector2(916, 377)
+script = ExtResource("4_q6r6c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="enemy" unique_id=894408048]
+position = Vector2(26, 164.00002)
+scale = Vector2(0.2613635, 0.25716138)
+sprite_frames = SubResource("SpriteFrames_0h7mo")
+frame_progress = 0.5198984
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy" unique_id=2111822904]
+position = Vector2(28.1875, 186.5)
+shape = SubResource("RectangleShape2D_rj586")
+
+[node name="Hitbox" type="Area2D" parent="enemy" unique_id=1470294459]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy/Hitbox" unique_id=816386819]
+position = Vector2(27.5, 188)
+shape = SubResource("RectangleShape2D_hqns4")
+
+[node name="Coin" type="Node2D" parent="." unique_id=1268196575]
+position = Vector2(53, -19)
+
+[node name="Area2D" type="Area2D" parent="Coin" unique_id=424747490]
+position = Vector2(-40, 32)
+script = ExtResource("6_d21ai")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Coin/Area2D" unique_id=977384840]
+position = Vector2(1074, 577)
+scale = Vector2(0.10009767, 0.07617187)
+texture = ExtResource("7_rj586")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Coin/Area2D" unique_id=1881232254]
+position = Vector2(1074, 576.99994)
+rotation = 0.03667397
+scale = Vector2(0.10009767, 0.07617187)
+texture = ExtResource("7_rj586")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Coin/Area2D" unique_id=1552551645]
+position = Vector2(1074, 577)
+scale = Vector2(0.100097656, 0.07617187)
+shape = SubResource("RectangleShape2D_x0ka3")
+
+[node name="Coin3" type="Node2D" parent="." unique_id=1150064300]
+position = Vector2(53, -19)
+
+[node name="Area2D" type="Area2D" parent="Coin3" unique_id=474408209]
+position = Vector2(-40, 32)
+script = ExtResource("6_d21ai")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Coin3/Area2D" unique_id=26908136]
+position = Vector2(1074, 577)
+scale = Vector2(0.10009767, 0.07617187)
+texture = ExtResource("7_rj586")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Coin3/Area2D" unique_id=31224786]
+position = Vector2(706, 426)
+rotation = 0.03667397
+scale = Vector2(0.10009767, 0.07617187)
+texture = ExtResource("7_rj586")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Coin3/Area2D" unique_id=58843123]
+position = Vector2(706, 426)
+scale = Vector2(0.100097656, 0.07617187)
+shape = SubResource("RectangleShape2D_x0ka3")
+
+[node name="Coin2" type="Node2D" parent="." unique_id=375582386]
+position = Vector2(53, -19)
+rotation = 0.27989626
+
+[node name="Area2D" type="Area2D" parent="Coin2" unique_id=510943588]
+position = Vector2(-40, 32)
+script = ExtResource("6_d21ai")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Coin2/Area2D" unique_id=153991643]
+position = Vector2(577.97375, 355.45987)
+scale = Vector2(0.10009767, 0.07617187)
+texture = ExtResource("7_rj586")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Coin2/Area2D" unique_id=158034301]
+position = Vector2(577.1334, 345.29645)
+scale = Vector2(0.100097656, 0.07617187)
+shape = SubResource("RectangleShape2D_x0ka3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=451446911]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1147081819]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Мометы:0"
+
+[node name="CollisionShape2D2" type="Area2D" parent="." unique_id=1498581652]
+position = Vector2(700, 572)
+script = ExtResource("6_4d7sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D2" unique_id=18064491]
+position = Vector2(35.750008, 20.999994)
+scale = Vector2(0.08061079, 0.054687485)
+texture = ExtResource("9_4d7sh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D2" unique_id=145348585]
+position = Vector2(35, 29)
+shape = SubResource("RectangleShape2D_ir8iy")
+
+[node name="CollisionShape2D3" type="Area2D" parent="." unique_id=91906094]
+position = Vector2(700, 572)
+script = ExtResource("6_4d7sh")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D3" unique_id=893315366]
+position = Vector2(93, -118.00001)
+scale = Vector2(0.08061079, 0.03906248)
+texture = ExtResource("9_4d7sh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionShape2D3" unique_id=2013034549]
+position = Vector2(93, -116.5)
+shape = SubResource("RectangleShape2D_ir8iy")
+
+[node name="GeminiGeneratedImageC29Mnwc29Mnwc29m(1)" type="Sprite2D" parent="." unique_id=510966100]
+show_behind_parent = true
+position = Vector2(423, 285)
+scale = Vector2(1.1720729, 0.8517201)
+texture = ExtResource("5_d21ai")
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1287706023 groups=["player"]]
+position = Vector2(193, 373)
+script = ExtResource("1_0e48y")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player" unique_id=278714349]
+position = Vector2(-53, 142)
+scale = Vector2(0.262215, 0.16439909)
+sprite_frames = SubResource("SpriteFrames_ta5nu")
+animation = &"idle"
+frame_progress = 0.07798885
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=1980329390]
+position = Vector2(-56, 148)
+shape = SubResource("RectangleShape2D_flf07")
+
+[connection signal="area_entered" from="enemy/Hitbox" to="enemy" method="_on_area_2d_area_entered"]
+[connection signal="tree_exiting" from="Player" to="Player" method="_on_tree_exiting"]
